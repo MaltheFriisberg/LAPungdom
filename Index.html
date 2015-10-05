@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>LAP ungdom</title>
+
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <script src = "bower_components/jquery/dist/jquery.min.js"></script>
+    <script src = "bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="CSS/style.css">
+    <script src = "bower_components/angular/angular.js" type = "text/javascript"></script>
+    <script src = "bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src = "js/navigation.js"></script>
+
+    <!-- UI-Router -->
+
+
+</head>
+<body>
+
+
+<nav class="navbar navbar-inverse navbar-fixed-top-custom">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Bootstrap theme</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a ui-sref="Hjem">Hjem</a></li>
+                <li><a ui-sref="Om">Om</a></li>
+                <li><a ui-sref="Kontakt">Kontakt</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Aktiviteter <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li class="dropdown-header">Nav header</li>
+                        <li><a href="#">Separated link</a></li>
+                        <li><a href="#">One more separated link</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+    <div id = imagecontainer>
+        <img src="LAPKøbenhavn.jpg"
+             alt="LAP ungdom københavn" style="max-width:100%;height:100%;">
+    </div>
+
+        <div class = "container" >
+
+            <li><a ui-sref="Subview1">State 1</a></li>
+            <li><a ui-sref="Subview2">State 2</a></li>
+            <div ui-view></div>
+             </div>
+
+<div class="navbar navbar-fixed-bottom">
+    <div class = "container">
+        Join vores gruppe på facebook
+        <a href ="https://www.facebook.com/groups/805665622807999/"><img border ="0" src = "FB-f-Logo__blue_29.png"></a>
+    </div>
+
+</div>
+
+
+
+
+</body>
+</html>
