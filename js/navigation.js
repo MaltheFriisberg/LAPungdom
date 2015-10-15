@@ -1,9 +1,13 @@
 /**
  * Created by Malteh on 10/1/2015.
  */
-var myApp = angular.module('myApp', ["ui.router"])
-myApp.config(function($stateProvider, $urlRouterProvider){
+var myApp = angular.module('myApp', ["ui.router", "facebook"])
+myApp.config(function(FacebookProvider,$stateProvider, $urlRouterProvider){
+    var myAppId = 'YOUR_APP_ID';
+    var accessToken = 'YOUR_ACCESS_TOKEN';
+    var fbPage = 'LAPungdom';
     console.log("navigation.js is running");
+    FacebookProvider.init('YOUR_APP_ID');
     // For any unmatched url, send to /route1
     $urlRouterProvider.otherwise("partials/Hjem")
 
@@ -44,3 +48,6 @@ myApp.config(function($stateProvider, $urlRouterProvider){
             templateUrl: "partials/Om.html"
         })
 })
+.controller("DefaultController", function() {
+
+    });

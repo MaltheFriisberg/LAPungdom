@@ -1,0 +1,12 @@
+<table>
+    <tbody>
+    <tr>
+        <td valign="middle" class="date">{{events.data[0].start_time | date: 'mediumDate'}}</td>
+        <td valign="middle" class="time">{{events.data[0].start_time | date: 'shortTime'}} - {{events.data[0].end_time | date: 'shortTime'}}</td>
+        <td valign="middle" class="band">{{events.data[0].name}}</td>
+        <td valign="middle" class="info">
+            <a href="http://facebook.com/events/{{events.data[0].id}}" target="_blank" class="button tiny">More Info</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
