@@ -4,7 +4,7 @@
 var myApp = angular.module('myApp', ["ui.router", "facebook"])
 myApp.config(function(FacebookProvider,$stateProvider, $urlRouterProvider){
     var myAppId = 'YOUR_APP_ID';
-    var accessToken = 'YOUR_ACCESS_TOKEN';
+    //var accessToken = 'YOUR_ACCESS_TOKEN';
     var fbPage = 'LAPungdom';
     console.log("navigation.js is running");
     FacebookProvider.init('YOUR_APP_ID');
@@ -48,6 +48,25 @@ myApp.config(function(FacebookProvider,$stateProvider, $urlRouterProvider){
             templateUrl: "partials/Om.html"
         })
 })
-.controller("DefaultController", function() {
+    .controller('MainCtrl', [
+        '$scope',
+        '$timeout',
+        'Facebook',
+        function($scope, $timeout, Facebook) {
 
-    });
+            $scope.events = {};
+
+            $scope.eve = function() {
+                Facebook.api('/'+fbPage+'/events?access_token='+accessToken+'&since=today&limit=200', function(response) {
+                    /**
+                     * Using $scope.$apply since this happens outside angular framework.
+                     */
+                    $scope.$apply(function() {
+                        $scope.events = response;
+                    });
+                });
+            };
+
+            $scope.eve();
+        }
+    ]);
